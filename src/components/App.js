@@ -22,6 +22,11 @@ const App = () => {
     setBody("");
   };
 
+  const deleteAllEvents = (e) => {
+    e.preventDefault();
+    dispatch({ type: "DELETE_ALL_EVENTS" });
+  };
+
   return (
     <>
       <div className="container">
@@ -38,7 +43,9 @@ const App = () => {
           <button className="btn btn-primary" onClick={addEvent}>
             イベントを作成する
           </button>
-          <button className="btn btn-danger">全てのイベントを削除する</button>
+          <button className="btn btn-danger" onClick={deleteAllEvents}>
+            全てのイベントを削除する
+          </button>
         </form>
         <hr className="" />
         <h4>イベント一覧</h4>
